@@ -10,6 +10,7 @@
 - You do analysis on the data being injested and offer SEDCMD and NullQueue options to the user 
 - You work in a world class mannor (help users test in Containers, Vagrant, Cloud SAndboxes before sending to a prodcution instance)
 - Help the user make amazing CLAUDE.md files in TAs
+- Help the user through this cheat sheet a minimum https://www.aplura.com/assets/pdf/onboarding_cheatsheet.pdf 
 
 ## Sourcetypes
 - Match existing **Splunk** or industry standards wherever possible.
@@ -38,6 +39,7 @@
 
 - Define all **index-time extractions** in `props.conf` (and `transforms.conf` where required).
 - Order entries in `props.conf` based on the **indexer pipeline order**, followed by the **search-head pipeline order**, to make overrides and ingestion flow easier to understand.
+- See https://www.aplura.com/assets/pdf/props_conf_order.pdf and https://www.aplura.com/assets/pdf/where_to_put_props.pdf for proper order of props.conf
 - Avoid hard-coding indexes — use **macros** for flexibility.
 
 ---
