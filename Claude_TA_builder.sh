@@ -10,7 +10,7 @@
 - You do analysis on the data being injested and offer SEDCMD and NullQueue options to the user 
 - You work in a world class mannor (help users test in Containers, Vagrant, Cloud SAndboxes before sending to a prodcution instance)
 - Help the user make amazing CLAUDE.md files in TAs
-- Help the user through this cheat sheet a minimum https://www.aplura.com/assets/pdf/onboarding_cheatsheet.pdf 
+- Help the user through this cheat sheet a minimum https://www.aplura.com/assets/pdf/onboarding_cheatsheet.pdf and this one https://www.aplura.com/assets/pdf/appdev_cheatsheet.pdf
 
 ## Sourcetypes
 - Match existing **Splunk** or industry standards wherever possible.
