@@ -87,3 +87,99 @@
 ## Verbs and Nouns
 - Pull from powershell recommended verbs to make your verb languge more consistent. 
 - Prefer **CIM** and **OCSF** mappings wherever possible. If neither standard applies, fall back to **Elastic Common Schema (ECS)** alignment.
+
+
+Top 25 red-team / pentester sites (with suggested workflow action)
+
+VirusTotal — multi-engine file & URL scanning, hash + URL + domain + IP lookup.
+Action: hash → vt.report, url → vt.url_report. 
+VirusTotal
+
+Shodan — Internet-wide device/service search; useful for exposed service lookups (SSH, RDP, IoT).
+Action: ip → shodan.host, domain → shodan.search. 
+Shodan
++1
+
+Censys — internet census & TLS/cert discovery; great for cert/host enumeration.
+Action: cert → censys.cert, ip → censys.host. 
+Medium
+
+urlscan.io — live URL sandboxing + screenshots and resource traces.
+Action: url → urlscan.submit (or show prior report). 
+Infosec Institute
+
+Hybrid Analysis (by CrowdStrike/Recorded Future family) — sandboxed file analysis.
+Action: hash/file → hybrid.analysis_report. 
+Medium
+
+Any.run — interactive online sandbox for dynamic analysis.
+Action: file/url → anyrun.lookup or submit for interactive session.
+
+Joe Sandbox — deep sandboxing with detailed behavior reports.
+Action: file → joesandbox.report.
+
+MalwareBazaar (abuse.ch) — community malware samples and hash lookups.
+Action: hash → malwarebazaar.search.
+
+URLhaus (abuse.ch) — repositories of malicious URLs/phishing campaigns.
+Action: url → urlhaus.lookup.
+
+ThreatFox (abuse.ch) — IOC sharing; good for hash & domain matches.
+Action: hash/domain → threatfox.search.
+
+AlienVault OTX — community threat intel pulses, indicator search.
+Action: ip/domain/hash → otx.enrich.
+
+AbuseIPDB — reputation scoring for IP addresses.
+Action: ip → abuseipdb.check.
+
+GreyNoise — internet noise context (is an IP noisy/scanner).
+Action: ip → greynoise.enrich.
+
+PassiveTotal / RiskIQ — passive DNS, historical mapping, asset context.
+Action: domain/ip → passivetotal.lookup.
+
+Recorded Future (or RF community) — commercial TI & risk scoring (API).
+Action: domain/asset → rf.enrich.
+
+MISP (Project) — threat-sharing platform (for internal sharing & lookups).
+Action: ioc → misp.search (especially for internal collaboration).
+
+PhishTank — community-driven phishing URL database.
+Action: url → phishtank.check.
+
+Have I Been Pwned — breach / email compromise lookup.
+Action: email → hibp.lookup.
+
+crt.sh — certificate transparency lookup (find certificates for domain).
+Action: domain → crt.search (useful for subdomain discovery).
+
+WHOIS / WhoisXML API — registrar & ownership metadata for domains/IPs.
+Action: domain → whois.lookup.
+
+BuiltWith / Wappalyzer-like APIs — tech stack fingerprinting for an observed domain.
+Action: domain → builtwith.lookup.
+
+Google Safe Browsing — safe/unsafe URL reputation checks.
+Action: url → gsafebrowsing.check.
+
+VirusShare / Malware Traffic Analysis — repos and pcap samples for hunting.
+Action: hash → virusshare.search (or pcap lookups).
+
+OpenCTI / TheHive integrations — orchestration platforms for TI + case management.
+Action: ioc → opencti.fetch / create case in TheHive.
+
+Hacker Search Engines & OSINT hubs (e.g., Censys complements, GitHub lists of search engines) — fast discovery resources (Certificate, code, leaked keys).
+Action: query → osint.search (hook to a multi-engine fan-out).
+
+Suggested mapping examples (quick)
+
+hash → VirusTotal, Hybrid Analysis, MalwareBazaar, ThreatFox
+
+url → urlscan.io, Google Safe Browsing, URLhaus, PhishTank, VirusTotal
+
+ip → Shodan, Censys, GreyNoise, AbuseIPDB, PassiveTotal
+
+domain/cert → crt.sh, Censys, PassiveTotal, WhoisXML
+
+email → Have I Been Pwned, OTX (pulses)
